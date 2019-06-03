@@ -1,0 +1,1263 @@
+﻿{
+  "name": "My Tasks-from-service.AAADEVZangSpaces",
+  "categories":
+[
+  {
+        "name": "AAA Zang Spaces",
+        "mTypes": 
+         [
+            {
+                "name": "AAA Get Tasks",
+                "snapinVersion": "3.0",
+		"displayName": "Tasks",
+                "tag": "ZangSpacesTasks",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVZangSpaces.GetAllTasks.TasksModel",
+                "executionClass": "service.AAADEVZangSpaces.GetAllTasks.TasksExecution",
+		"mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "spaceId",
+                        "displayPropName": "Space Id",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSpaceId",
+                        "mapping": "spaceId"
+                    },
+                    {
+                        "name": "authorization",
+                        "displayPropName": "Authorization JWT",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setAuthorization",
+                        "mapping": "authorization"
+                    }
+                ],
+	        "input_schema": "{
+			        title: InputSchema,
+			        type: object,
+			        properties: {
+			            spaceId: {
+			                type: string
+                        },
+                        authorization: {
+			                type: string
+			            }
+			        }
+	        }",
+                "output_schema": "{  
+                    title:OutputSchema,
+                    type:object,
+                    properties:{  
+                       nextPageUrl:{  
+                          type:string
+                       },
+                       previousPageUrl:{  
+                          type:string
+                       },
+                       total:{  
+                          type:string
+                       },
+                       data:{  
+                          type:array,
+                          items:{  
+                             type:object,
+                             properties:{  
+                                _id:{  
+                                   type:string
+                                },
+                                category:{  
+                                   type:string
+                                },
+                                topicId:{  
+                                   type:string
+                                },
+                                modified:{  
+                                   type:string
+                                },
+                                status:{  
+                                   type:string
+                                },
+                                content:{  
+                                   type:object,
+                                   properties:{  
+                                      bodyText:{  
+                                         type:string
+                                      },
+                                      description:{  
+                                         type:string
+                                      },
+                                      dueDate:{  
+                                         type:string
+                                      },
+                                      status:{  
+                                         type:string
+                                      },
+                                      data:{  
+                                         type:array,
+                                         items:{  
+                                            type:object,
+                                            properties:{  
+                                               provider:{  
+                                                  type:string
+                                               },
+                                               providerFileType:{  
+                                                  type:string
+                                               },
+                                               fileType:{  
+                                                  type:string
+                                               },
+                                               name:{  
+                                                  type:string
+                                               },
+                                               fileId:{  
+                                                  type:string
+                                               },
+                                               icon:{  
+                                                  type:string
+                                               },
+                                               thumbnail:{  
+                                                  type:string
+                                               },
+                                               keywords:{  
+                                                  type:string
+                                               },
+                                               description:{  
+                                                  type:string
+                                               },
+                                               previewFile:{  
+                                                  type:string
+                                               },
+                                               thumbnailFile:{  
+                                                  type:string
+                                               },
+                                               metaData:{  
+                                                  type:object,
+                                                  properties:{  
+                                                     stgeProvd:{  
+                                                        type:string
+                                                     },
+                                                     prvwProvd:{  
+                                                        type:string
+                                                     },
+                                                     paging:{  
+                                                        type:string
+                                                     }
+                                                  }
+                                               },
+                                               fileSize:{  
+                                                  type:number
+                                               },
+                                               pages:{  
+                                                  type:number
+                                               },
+                                               nextSchedule:{  
+                                                  type:string
+                                               },
+                                               convertStart:{  
+                                                  type:string
+                                               },
+                                               convertStatus:{  
+                                                  type:string
+                                               },
+                                               path:{  
+                                                  type:string
+                                               }
+                                            }
+                                         }
+                                      },
+                                      attendees:{  
+                                         type:array,
+                                         items:{  
+                                            type:object
+                                         }
+                                      },
+                                      assignees:{  
+                                         type:array,
+                                         items:{  
+                                            type:object,
+                                            properties:{  
+                                               _id:{  
+                                                  type:string
+                                               }
+                                            }
+                                         }
+                                      }
+                                   }
+                                },
+                                created:{  
+                                   type:string
+                                },
+                                sender:{  
+                                   type:object,
+                                   properties:{  
+                                      NewString1:{  
+                                         type:string
+                                      }
+                                   }
+                                },
+                                likeCount:{  
+                                   type:string
+                                },
+                                chatCount:{  
+                                   type:string
+                                },
+                                __v:{  
+                                   type:string
+                                }
+                             }
+                          }
+                       }
+                    }
+                 }"
+            },{
+                "name": "AAA Get Ideas",
+                "snapinVersion": "3.0",
+		"displayName": "Ideas",
+                "tag": "ZangSpacesIdeas",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVZangSpaces.GetIdeas.IdeasModel",
+                "executionClass": "service.AAADEVZangSpaces.GetIdeas.IdeasExecution",
+		"mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "spaceIdIdeas",
+                        "displayPropName": "Space Id",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSpaceIdIdeas",
+                        "mapping": "spaceIdIdeas"
+                    },
+                    {
+                        "name": "authorization",
+                        "displayPropName": "Authorization JWT",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setAuthorization",
+                        "mapping": "authorization"
+                    },
+                    {
+                        "name": "size",
+                        "displayPropName": "Number of messages to return",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSize",
+                        "mapping": "size"
+                    },
+                    {
+                        "name": "page",
+                        "displayPropName": "Page number of response data.",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setPage",
+                        "mapping": "page"
+                    }
+                ],
+	        "input_schema": "{
+			        title: InputSchema,
+			        type: object,
+			        properties: {
+			            spaceIdIdeas: {
+			                type: string
+                        },
+                        authorization: {
+			                type: string
+			            },
+                        size: {
+			                type: string
+			            },
+                        page: {
+			                type: string
+			            }
+			        }
+	        }",
+                "output_schema": "{  
+                    title:output_schema,
+                    type:object,
+                    properties:{  
+                       nextPageUrl:{  
+                          type:string
+                       },
+                       previousPageUrl:{  
+                          type:string
+                       },
+                       total:{  
+                          type:string
+                       },
+                       data:{  
+                          type:array,
+                          items:{  
+                             type:object,
+                             properties:{  
+                                _id:{  
+                                   type:string
+                                },
+                                category:{  
+                                   type:string
+                                },
+                                topicId:{  
+                                   type:string
+                                },
+                                modified:{  
+                                   type:string
+                                },
+                                status:{  
+                                   type:string
+                                },
+                                created:{  
+                                   type:string
+                                },
+                                likeCount:{  
+                                   type:string
+                                },
+                                chatCount:{  
+                                   type:string
+                                },
+                                __v:{  
+                                   type:string
+                                },
+                                sender:{  
+                                   type:object,
+                                   properties:{  
+                                      _id:{  
+                                         type:string
+                                      },
+                                      type:{  
+                                         type:string
+                                      },
+                                      username:{  
+                                         type:string
+                                      },
+                                      displayname:{  
+                                         type:string
+                                      },
+                                      picture_url:{  
+                                         type:string
+                                      }
+                                   }
+                                },
+                                content:{  
+                                   type:object,
+                                   properties:{  
+                                      bodyText:{  
+                                         type:string
+                                      },
+                                      description:{  
+                                         type:string
+                                      },
+                                      status:{  
+                                         type:string
+                                      },
+                                      dueDate:{  
+                                         type:string
+                                      },
+                                      attendees:{  
+                                         type:array,
+                                         items:{  
+                                            type:object
+                                         }
+                                      },
+                                      assignees:{  
+                                         type:array,
+                                         items:{  
+                                            type:object
+                                         }
+                                      },
+                                      data:{  
+                                         type:array,
+                                         items:{  
+                                            type:object,
+                                            properties:{  
+                                               provider:{  
+                                                  type:string
+                                               },
+                                               providerFileType:{  
+                                                  type:string
+                                               },
+                                               fileType:{  
+                                                  type:string
+                                               },
+                                               name:{  
+                                                  type:string
+                                               },
+                                               fileId:{  
+                                                  type:string
+                                               },
+                                               icon:{  
+                                                  type:string
+                                               },
+                                               thumbnail:{  
+                                                  type:string
+                                               },
+                                               keywords:{  
+                                                  type:string
+                                               },
+                                               description:{  
+                                                  type:string
+                                               },
+                                               previewFile:{  
+                                                  type:string
+                                               },
+                                               fileSize:{  
+                                                  type:number
+                                               },
+                                               thumbnailFile:{  
+                                                  type:string
+                                               },
+                                               metaData:{  
+                                                  type:object,
+                                                  properties:{  
+                                                     stgeProvd:{  
+                                                        type:string
+                                                     },
+                                                     prvwProvd:{  
+                                                        type:string
+                                                     },
+                                                     paging:{  
+                                                        type:number
+                                                     }
+                                                  }
+                                               },
+                                               pages:{  
+                                                  type:string
+                                               },
+                                               nextSchedule:{  
+                                                  type:string
+                                               },
+                                               convertStart:{  
+                                                  type:string
+                                               },
+                                               convertStatus:{  
+                                                  type:string
+                                               },
+                                               convertError:{  
+                                                  type:string
+                                               },
+                                               path:{  
+                                                  type:string
+                                               },
+                                               previewUrl:{  
+                                                  type:string
+                                               },
+                                               thumbnailUrl:{  
+                                                  type:string
+                                               }
+                                            }
+                                         }
+                                      }
+                                   }
+                                }
+                             }
+                          }
+                       }
+                    }
+                 }"
+            },{
+                "name": "AAA Get Members",
+                "snapinVersion": "3.0",
+		"displayName": "Members",
+                "tag": "ZangSpacesMembers",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVZangSpaces.GetMembers.MembersModel",
+                "executionClass": "service.AAADEVZangSpaces.GetMembers.MembersExecution",
+		"mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "spaceIdMembers",
+                        "displayPropName": "Space Id",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSpaceIdMembers",
+                        "mapping": "spaceIdMembers"
+                    },
+                    {
+                        "name": "authorization",
+                        "displayPropName": "Authorization JWT",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setAuthorization",
+                        "mapping": "authorization"
+                    },
+                    {
+                        "name": "size",
+                        "displayPropName": "Number of messages to return",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSize",
+                        "mapping": "size"
+                    },
+                    {
+                        "name": "page",
+                        "displayPropName": "Page number of response data.",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setPage",
+                        "mapping": "page"
+                    },
+                    {
+                        "name": "search",
+                        "displayPropName": "The search string to filter members",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSearch",
+                        "mapping": "searchMembers"
+                    }
+                ],
+	        "input_schema": "{
+			        title: InputSchema,
+			        type: object,
+			        properties: {
+			            spaceIdMembers: {
+			                type: string
+                        },
+                        authorization: {
+			                type: string
+			            },
+                        size: {
+			                type: string
+			            },
+                        page: {
+			                type: string
+			            },
+                        searchMembers: {
+			                type: string
+			            }
+			        }
+	        }",
+                "output_schema": "{  
+                    title:output_schema,
+                    type:object,
+                    properties:{  
+                       data:{  
+                          type:array,
+                          items:{  
+                             type:object,
+                             properties:{  
+                                member:{  
+                                   type:string
+                                },
+                                memberType:{  
+                                   type:string
+                                },
+                                role:{  
+                                   type:string
+                                },
+                                joinTime:{  
+                                   type:string
+                                },
+                                username:{  
+                                   type:string
+                                },
+                                displayname:{  
+                                   type:string
+                                },
+                                picture_url:{  
+                                   type:string
+                                },
+                                phone_numbers:{  
+                                   type:array,
+                                   items:{  
+                                      type:object,
+                                      properties:{  
+                                         unique:{  
+                                            type:string
+                                         },
+                                         login:{  
+                                            type:string
+                                         },
+                                         identity:{  
+                                            type:string
+                                         },
+                                         verified:{  
+                                            type:string
+                                         },
+                                         primary:{  
+                                            type:string
+                                         },
+                                         canonicalForm:{  
+                                            type:string
+                                         },
+                                         type:{  
+                                            type:string
+                                         },
+                                         value:{  
+                                            type:string
+                                         }
+                                      }
+                                   }
+                                }
+                             }
+                          }
+                       }
+                    }
+                 }"
+            },
+            {
+                "name": "AAA Get Messages",
+                "snapinVersion": "3.0",
+		        "displayName": "Messages",
+                "tag": "ZangSpacesMessages",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVZangSpaces.GetMessages.MessagesModel",
+                "executionClass": "service.AAADEVZangSpaces.GetMessages.MessagesExecution",
+		        "mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "spaceIdMessages",
+                        "displayPropName": "Space Id",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSpaceIdMessages",
+                        "mapping": "spaceIdMessages"
+                    },
+                    {
+                        "name": "authorization",
+                        "displayPropName": "Authorization JWT",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setAuthorization",
+                        "mapping": "authorization"
+                    },
+                    {
+                        "name": "size",
+                        "displayPropName": "Number of messages to return",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSize",
+                        "mapping": "size"
+                    },
+                    {
+                        "name": "searchstring",
+                        "displayPropName": "Search text to filter messages.",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSearchstring",
+                        "mapping": "searchstring"
+                    }
+                ],
+	        "input_schema": "{
+			        title: InputSchema,
+			        type: object,
+			        properties: {
+			            spaceIdMessages: {
+			                type: string
+                        },
+                        authorization: {
+			                type: string
+			            },
+                        size: {
+			                type: string
+			            },
+                        searchstring: {
+			                type: string
+			            }
+			        }
+	        }",
+                "output_schema": "{  
+                    title:output_schema,
+                    type:object,
+                    properties:{  
+                       nextPageUrl:{  
+                          type:string
+                       },
+                       previousPageUrl:{  
+                          type:string
+                       },
+                       total:{  
+                          type:string
+                       },
+                       data:{  
+                          type:array,
+                          items:{  
+                             type:object,
+                             properties:{  
+                                _id:{  
+                                   type:string
+                                },
+                                category:{  
+                                   type:string
+                                },
+                                topicId:{  
+                                   type:string
+                                },
+                                modified:{  
+                                   type:string
+                                },
+                                status:{  
+                                   type:string
+                                },
+                                created:{  
+                                   type:string
+                                },
+                                likeCount:{  
+                                   type:string
+                                },
+                                chatCount:{  
+                                   type:string
+                                },
+                                __v:{  
+                                   type:string
+                                },
+                                sender:{  
+                                   type:object,
+                                   properties:{  
+                                      _id:{  
+                                         type:string
+                                      },
+                                      type:{  
+                                         type:string
+                                      },
+                                      username:{  
+                                         type:string
+                                      },
+                                      displayname:{  
+                                         type:string
+                                      },
+                                      picture_url:{  
+                                         type:string
+                                      }
+                                   }
+                                },
+                                content:{  
+                                   type:object,
+                                   properties:{  
+                                      bodyText:{  
+                                         type:string
+                                      },
+                                      description:{  
+                                         type:string
+                                      },
+                                      status:{  
+                                         type:string
+                                      },
+                                      dueDate:{  
+                                         type:string
+                                      },
+                                      attendees:{  
+                                         type:array,
+                                         items:{  
+                                            type:object
+                                         }
+                                      },
+                                      assignees:{  
+                                         type:array,
+                                         items:{  
+                                            type:object
+                                         }
+                                      },
+                                      data:{  
+                                         type:array,
+                                         items:{  
+                                            type:object,
+                                            properties:{  
+                                               provider:{  
+                                                  type:string
+                                               },
+                                               providerFileType:{  
+                                                  type:string
+                                               },
+                                               fileType:{  
+                                                  type:string
+                                               },
+                                               name:{  
+                                                  type:string
+                                               },
+                                               fileId:{  
+                                                  type:string
+                                               },
+                                               icon:{  
+                                                  type:string
+                                               },
+                                               thumbnail:{  
+                                                  type:string
+                                               },
+                                               keywords:{  
+                                                  type:string
+                                               },
+                                               description:{  
+                                                  type:string
+                                               },
+                                               previewFile:{  
+                                                  type:string
+                                               },
+                                               fileSize:{  
+                                                  type:number
+                                               },
+                                               thumbnailFile:{  
+                                                  type:string
+                                               },
+                                               metaData:{  
+                                                  type:object,
+                                                  properties:{  
+                                                     stgeProvd:{  
+                                                        type:string
+                                                     },
+                                                     prvwProvd:{  
+                                                        type:string
+                                                     },
+                                                     paging:{  
+                                                        type:number
+                                                     }
+                                                  }
+                                               },
+                                               pages:{  
+                                                  type:string
+                                               },
+                                               nextSchedule:{  
+                                                  type:string
+                                               },
+                                               convertStart:{  
+                                                  type:string
+                                               },
+                                               convertStatus:{  
+                                                  type:string
+                                               },
+                                               convertError:{  
+                                                  type:string
+                                               },
+                                               path:{  
+                                                  type:string
+                                               },
+                                               previewUrl:{  
+                                                  type:string
+                                               },
+                                               thumbnailUrl:{  
+                                                  type:string
+                                               }
+                                            }
+                                         }
+                                      }
+                                   }
+                                }
+                             }
+                          }
+                       }
+                    }
+                 }"
+            },
+            {
+                "name": "AAA Create Idea",
+                "snapinVersion": "3.0",
+		        "displayName": "Idea",
+                "tag": "ZangSpacesCreateIdea",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVZangSpaces.PostIdea.CreateIdeaModel",
+                "executionClass": "service.AAADEVZangSpaces.PostIdea.CreateIdeaExecution",
+		        "mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "spaceIdCreateIdea",
+                        "displayPropName": "Unique identifier of the space.",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setSpaceIdCreateIdea",
+                        "mapping": "spaceIdCreateIdea"
+                    },
+                    {
+                        "name": "autorization",
+                        "displayPropName": "Authorization JWT",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setAuthorization",
+                        "mapping": "authorization"
+                    },
+                    {
+                        "name": "bodyText",
+                        "displayPropName": "Message text to send",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setBodyText",
+                        "mapping": "bodyText"
+                    },
+                    {
+                        "name": "description",
+                        "displayPropName": "Description of the idea",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setDescription",
+                        "mapping": "description"
+                    },
+                    {
+                        "name": "messageType",
+                        "displayPropName": "Type Message",
+                        "type": "String",
+                        "controlType": "combo",
+                        "filler": "getInstance.comboMessageType",
+                        "fillerModel": "service.AAADEVZangSpaces.PostIdea.FillerUtil",
+                        "modelName": "setMessageType"
+                    }
+                ],
+	        "input_schema": "{
+			        title: InputSchema,
+			        type: object,
+			        properties: {
+			            spaceIdCreateIdea: {
+			                type: string
+                        },
+                        authorization: {
+			                type: string
+			            },
+                        bodyText: {
+			                type: string
+			            },
+                        description: {
+			                type: string
+			            }
+			        }
+	        }",
+                "output_schema": "{  
+                    title:output_schema,
+                    type:object,
+                    properties:{  
+                       data:{  
+                          type:array,
+                          items:{  
+                             type:object,
+                             properties:{  
+                                category:{  
+                                   type:string
+                                },
+                                topicId:{  
+                                   type:string
+                                },
+                                modified:{  
+                                   type:string
+                                },
+                                _id:{  
+                                   type:string
+                                },
+                                status:{  
+                                   type:string
+                                },
+                                content:{  
+                                   type:object,
+                                   properties:{  
+                                      bodyText:{  
+                                         type:string
+                                      },
+                                      description:{  
+                                         type:string
+                                      },
+                                      status:{  
+                                         type:string
+                                      },
+                                      dueDate:{  
+                                         type:string
+                                      },
+                                      data:{  
+                                         type:array,
+                                         items:{  
+                                            type:object
+                                         }
+                                      }
+                                   }
+                                },
+                                created:{  
+                                   type:string
+                                },
+                                sender:{  
+                                   type:object,
+                                   properties:{  
+                                      _id:{  
+                                         type:string
+                                      },
+                                      type:{  
+                                         type:string
+                                      },
+                                      username:{  
+                                         type:string
+                                      },
+                                      displayname:{  
+                                         type:string
+                                      },
+                                      picture_url:{  
+                                         type:string
+                                      }
+                                   }
+                                },
+                                likeCount:{  
+                                   type:string
+                                },
+                                chatCount:{  
+                                   type:string
+                                }
+                             }
+                          }
+                       }
+                    }
+                 }"
+            },
+            {
+               "name": "AAA Create Chat",
+               "snapinVersion": "3.0",
+             "displayName": "Chat",
+               "tag": "ZangSpacesCreateChat",
+               "svg": "hello",
+               "helpUrl": "hello.html",
+               "tile": "blue",
+               "serviceName": "CollabDesigner",
+               "custom": "true",
+               "nodeType": "activity",
+               "modelClass": "service.AAADEVZangSpaces.PostChat.CreateChatModel",
+               "executionClass": "service.AAADEVZangSpaces.PostChat.CreateChatExecution",
+             "mapping": "[\"input\", \"output\"]",
+               "properties": [
+                   {
+                       "name": "spaceIdCreateMessage",
+                       "displayPropName": "Unique identifier of the space.",
+                       "type": "String",
+                       "controlType": "text",
+                       "modelName": "setSpaceIdCreateMessage",
+                       "mapping": "spaceIdCreateMessage"
+                   },
+                   {
+                       "name": "authorizationCreateMessage",
+                       "displayPropName": "Authorization JWT",
+                       "type": "String",
+                       "controlType": "text",
+                       "modelName": "setAuthorizationCreateMessage",
+                       "mapping": "authorizationCreateMessage"
+                   },
+                   {
+                       "name": "bodyTextCreateMessage",
+                       "displayPropName": "Message text to send",
+                       "type": "String",
+                       "controlType": "text",
+                       "modelName": "setBodyTextCreateMessage",
+                       "mapping": "bodyTextCreateMessage"
+                   },
+                   {
+                       "name": "messageTypeCreateMessage",
+                       "displayPropName": "Type Message",
+                       "type": "String",
+                       "controlType": "combo",
+                       "filler": "getInstance.comboMessageType",
+                       "fillerModel": "service.AAADEVZangSpaces.PostChat.FillerUtil",
+                       "modelName": "setMessageTypeCreateMessage"
+                   }
+               ],
+          "input_schema": "{
+                title: InputSchema,
+                type: object,
+                properties: {
+                       spaceIdCreateMessage: {
+                        type: string
+                       },
+                       authorizationCreateMessage: {
+                        type: string
+                    },
+                    bodyTextCreateMessage: {
+                        type: string
+                    }
+                }
+          }",
+               "output_schema": "{  
+                  title:output_schema,
+                  type:object,
+                  properties:{  
+                     data:{  
+                        type:array,
+                        items:{  
+                           type:object,
+                           properties:{  
+                              category:{  
+                                 type:string
+                              },
+                              topicId:{  
+                                 type:string
+                              },
+                              modified:{  
+                                 type:string
+                              },
+                              _id:{  
+                                 type:string
+                              },
+                              status:{  
+                                 type:string
+                              },
+                              content:{  
+                                 type:object,
+                                 properties:{  
+                                    bodyText:{  
+                                       type:string
+                                    },
+                                    description:{  
+                                       type:string
+                                    },
+                                    status:{  
+                                       type:string
+                                    },
+                                    dueDate:{  
+                                       type:string
+                                    },
+                                    data:{  
+                                       type:array,
+                                       items:{  
+                                          type:object
+                                       }
+                                    }
+                                 }
+                              },
+                              created:{  
+                                 type:string
+                              },
+                              sender:{  
+                                 type:object,
+                                 properties:{  
+                                    _id:{  
+                                       type:string
+                                    },
+                                    type:{  
+                                       type:string
+                                    },
+                                    username:{  
+                                       type:string
+                                    },
+                                    displayname:{  
+                                       type:string
+                                    },
+                                    picture_url:{  
+                                       type:string
+                                    }
+                                 }
+                              },
+                              likeCount:{  
+                                 type:string
+                              },
+                              chatCount:{  
+                                 type:string
+                              }
+                           }
+                        }
+                     }
+                  }
+               }"
+            },
+            {
+               "name": "AAA Create Task",
+               "snapinVersion": "3.0",
+             "displayName": "Task",
+               "tag": "ZangSpacesCreateTask",
+               "svg": "hello",
+               "helpUrl": "hello.html",
+               "tile": "blue",
+               "serviceName": "CollabDesigner",
+               "custom": "true",
+               "nodeType": "activity",
+               "modelClass": "service.AAADEVZangSpaces.PostTask.CreateTaskModel",
+               "executionClass": "service.AAADEVZangSpaces.PostTask.CreateTaskExecution",
+             "mapping": "[\"input\", \"output\"]",
+               "properties": [
+                   {
+                       "name": "spaceIdeCreateTask",
+                       "displayPropName": "Unique identifier of the space.",
+                       "type": "String",
+                       "controlType": "text",
+                       "modelName": "setSpaceIdeCreateTask",
+                       "mapping": "spaceIdeCreateTask"
+                   },
+                   {
+                       "name": "authorizationCreateTask",
+                       "displayPropName": "Authorization JWT",
+                       "type": "String",
+                       "controlType": "text",
+                       "modelName": "setAuthorizationCreateTask",
+                       "mapping": "authorizationCreateTask"
+                   },
+                   {
+                       "name": "bodyTextCreateTask",
+                       "displayPropName": "Body text to the Task",
+                       "type": "String",
+                       "controlType": "text",
+                       "modelName": "setBodyTextCreateTask",
+                       "mapping": "bodyTextCreateTask"
+                   },
+                   {
+                     "name": "descriptionCreateTask",
+                     "displayPropName": "Description text to the Task",
+                     "type": "String",
+                     "controlType": "text",
+                     "modelName": "setDescriptionCreateTask",
+                     "mapping": "descriptionCreateTask"
+                  },
+                  {
+                     "name": "assignessCreateTask",
+                     "displayPropName": "UserIds of task members.",
+                     "type": "String",
+                     "controlType": "text",
+                     "modelName": "setAssignessCreateTask",
+                     "mapping": "assignessCreateTask"
+                  },
+                  {
+                     "name": "dueDateCreateTask",
+                     "displayPropName": "Date the task is to be completed.",
+                     "type": "String",
+                     "controlType": "text",
+                     "modelName": "setDueDateCreateTask",
+                     "mapping": "dueDateCreateTask"
+                  },
+                   {
+                       "name": "messageTypeCreateTask",
+                       "displayPropName": "Type Message",
+                       "type": "String",
+                       "controlType": "combo",
+                       "filler": "getInstance.comboMessageType",
+                       "fillerModel": "service.AAADEVZangSpaces.PostTask.FillerUtil",
+                       "modelName": "setMessageTypeCreateTask"
+                   }
+               ],
+          "input_schema": "{
+                title: InputSchema,
+                type: object,
+                properties: {
+                  spaceIdeCreateTask: {
+                        type: string
+                       },
+                       authorizationCreateTask: {
+                        type: string
+                    },
+                    bodyTextCreateTask: {
+                        type: string
+                    },
+                    descriptionCreateTask: {
+                        type: string
+                    },
+                    assignessCreateTask: {
+                        type: string
+                    },
+                    dueDateCreateTask: {
+                        type: string
+                    }   
+                }
+          }",
+               "output_schema": ""
+            }
+        ]
+  }
+]
+}
